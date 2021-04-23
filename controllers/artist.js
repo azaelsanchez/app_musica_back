@@ -97,11 +97,11 @@ function deleteArtist(req, res){
                 res.status(404).send({message: 'El artista no fue eliminado'});
             }else{
 
-                Album.find({artist: artistRemoved._id}).remove((err, albunRemoved)=>{
+                Album.find({artist: artistRemoved._id}).remove((err, albumRemoved)=>{
                     if(err){
                         res.status(500).send({message: 'Error eliminando el album'});
                     }else{
-                        if(!albunRemoved){
+                        if(!albumRemoved){
                             res.status(404).send({message: 'El album no fue eliminado'});
                         }else{
 
